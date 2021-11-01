@@ -29,7 +29,7 @@ namespace CalculadoraINSS.DataAccess.Drivers
 
                 var children = item.Value.Children()["Salarios"];
 
-                Dictionary<decimal, TableDataStruct> _discounts = new Dictionary<decimal, TableDataStruct>(children.Count());
+                Dictionary<decimal, TableDataStruct> _discounts = new(children.Count());
 
                 foreach (var child in children)
                 {
@@ -41,7 +41,7 @@ namespace CalculadoraINSS.DataAccess.Drivers
                         decimal flKey = decimal.Parse(valor, CultureInfo.InvariantCulture);
                         decimal flValue = decimal.Parse(desconto, CultureInfo.InvariantCulture);
 
-                        TableDataStruct s = new TableDataStruct(flValue);
+                        TableDataStruct s = new(flValue);
 
                         _discounts.Add(flKey, s);
                     }
@@ -53,7 +53,7 @@ namespace CalculadoraINSS.DataAccess.Drivers
                 {
                     string value = child.ToString();
                     var flValue = decimal.Parse(value, CultureInfo.InvariantCulture);
-                    TableDataStruct s = new TableDataStruct((decimal)flValue, true);
+                    TableDataStruct s = new(flValue, true);
 
                     _discounts.Add(decimal.MaxValue, s);
 

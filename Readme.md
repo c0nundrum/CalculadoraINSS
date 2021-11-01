@@ -1,7 +1,7 @@
 ﻿# Calculadora INSS
 
 Implementação Data Driven de uma calculadora de descontos INSS, de acordo com o requisitado, que pode ser extendida com drivers para leitura de tabelas de desconto de diversos formatos.
-
+Feito em .Net 5.0
 
 ## Dependências
 

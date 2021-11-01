@@ -63,7 +63,7 @@ namespace CalculadoraINSS.Tests
                 Debug.Assert(desconto == item.DescontoSalario, string.Format("Ano 2011 Calculadora = {0} : BruteForce = {1}", desconto, item.DescontoSalario));
             }
 
-            DateTime e = new DateTime(2012, 07, 28, 22, 35, 5, new CultureInfo("pt-BR", false).Calendar);
+            DateTime e = new(2012, 07, 28, 22, 35, 5, new CultureInfo("pt-BR", false).Calendar);
             foreach (var item in Salario2012)
             {
                 var desconto = GetBruteForceDesconto2012(item.SalarioOriginal);
@@ -98,8 +98,8 @@ namespace CalculadoraINSS.Tests
         /// Realização dos testes</param>
         public void Populate2011(bool useDecimal)
         {
-            Random random = new Random(231);
-            DateTime d = new DateTime(2011, 07, 28, 22, 35, 5, new CultureInfo("pt-BR", false).Calendar);
+            Random random = new(231);
+            DateTime d = new(2011, 07, 28, 22, 35, 5, new CultureInfo("pt-BR", false).Calendar);
 
             Salario2011 = new List<SalarioData>();
             for (int i = 0; i < TESTNUMBER; i++)
@@ -116,8 +116,8 @@ namespace CalculadoraINSS.Tests
         /// Realização dos testes</param>
         public void Populate2012(bool useDecimal)
         {
-            Random random = new Random(65456);
-            DateTime d = new DateTime(2012, 07, 28, 22, 35, 5, new CultureInfo("pt-BR", false).Calendar);
+            Random random = new(65456);
+            DateTime d = new(2012, 07, 28, 22, 35, 5, new CultureInfo("pt-BR", false).Calendar);
 
             Salario2012 = new List<SalarioData>();
             for (int i = 0; i < TESTNUMBER; i++)

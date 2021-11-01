@@ -16,6 +16,7 @@ namespace CalculadoraINSS.DataAccess.Drivers
         /// <param name="tableAddress">Endereço da tabela XML a ser carregada</param>
         public TableFromXML(string tableAddress)
         {
+
             XElement root = XElement.Load(tableAddress);
 
             IEnumerable<XElement> anos = from el in root.Elements("Ano")
@@ -32,7 +33,7 @@ namespace CalculadoraINSS.DataAccess.Drivers
                 IEnumerable<XElement> q = from c in ano.Descendants("Salario")
                                           select c;
 
-                Dictionary<decimal, TableDataStruct> _discounts = new Dictionary<decimal, TableDataStruct>(q.Count());
+                Dictionary<decimal, TableDataStruct> _discounts = new(q.Count());
 
 
                 foreach (var el in q)
@@ -45,7 +46,7 @@ namespace CalculadoraINSS.DataAccess.Drivers
                     decimal flKey = decimal.Parse(Key, CultureInfo.InvariantCulture);
                     decimal flValue = decimal.Parse(Value, CultureInfo.InvariantCulture);
 
-                    TableDataStruct s = new TableDataStruct(flValue);
+                    TableDataStruct s = new(flValue);
 
                     _discounts.Add(flKey, s);
                 }
@@ -56,7 +57,7 @@ namespace CalculadoraINSS.DataAccess.Drivers
                 foreach (var el in t)
                 {
                     decimal flValue = decimal.Parse(el.Value, CultureInfo.InvariantCulture);
-                    TableDataStruct s = new TableDataStruct((decimal)flValue, true);
+                    TableDataStruct s = new(flValue, true);
 
                     _discounts.Add(decimal.MaxValue, s);
                 }
