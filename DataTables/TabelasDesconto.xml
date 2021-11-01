@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Descontos>
+  <Ano Data="2011">
+    <Teto>405.86</Teto>
+    <Salario Valor="1106.9">
+      <Desconto>0.08</Desconto>
+    </Salario>
+    <Salario Valor="1844.83">
+      <Desconto>0.09</Desconto>
+    </Salario>
+    <Salario Valor="3689.66">
+      <Desconto>0.11</Desconto>
+    </Salario>
+  </Ano>
+  <Ano Data="2012">
+    <Teto>500.00</Teto>
+    <Salario Valor="1000.0">
+      <Desconto>0.07</Desconto>
+    </Salario>
+    <Salario Valor="1500.00">
+      <Desconto>0.08</Desconto>
+    </Salario>
+    <Salario Valor="3000.00">
+      <Desconto>0.09</Desconto>
+    </Salario>
+    <Salario Valor="4000.00">
+      <Desconto>0.11</Desconto>
+    </Salario>    
+  </Ano>
+</Descontos>
